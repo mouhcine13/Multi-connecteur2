@@ -1,0 +1,27 @@
+type Query{
+    findAll:[AuthentificationResponseDTO],
+    findByid(id:Int):AuthentificationResponseDTO
+}
+
+type Mutation{
+    save(authentificationRequestDTO : AuthentificationRequestDTO): AuthentificationResponseDTO
+}
+
+type AuthentificationResponseDTO{
+    id : Int,
+    email : String,
+    motdepasse : String,
+    customer : Customer
+}
+
+input AuthentificationRequestDTO{
+    nom : String,
+    email : String,
+    motdepasse : String
+}
+
+type Customer{
+    id : Int,
+    nom : String,
+    email : String
+}

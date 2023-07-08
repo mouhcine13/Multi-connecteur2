@@ -1,0 +1,19 @@
+type Query{
+    findAll:[CustomerResponseDTO],
+    findByid(id:Int):CustomerResponseDTO
+}
+
+type Mutation{
+    save(customerRequestDTO : CustomerRequestDTO) : CustomerResponseDTO
+}
+
+type CustomerResponseDTO{
+    id : Int,
+    nom : String,
+    email : String
+}
+
+input CustomerRequestDTO{
+    nom : String,
+    email : String
+}
